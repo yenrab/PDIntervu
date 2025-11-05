@@ -61,7 +61,7 @@ PDIntervu/
 
 ## Usage
 
-The system is designed to be executed as an Actly prompt. When loaded, the PDIntervu agent will:
+The system is designed to be executed as an AALang prompt. When loaded, the PDIntervu agent will:
 
 1. Display initial instructions
 2. Ask the user to select a competency topic
@@ -72,7 +72,7 @@ The system is designed to be executed as an Actly prompt. When loaded, the PDInt
 ## Technical Details
 
 - **Format**: JSON-LD (JSON for Linking Data)
-- **Vocabulary**: Uses Actly.dev specification (`https://actly.dev/spec/`)
+- **Vocabulary**: Uses AALang.dev specification (`https://aalang.dev/spec/`)
 - **State Management**: Shared state across modes for coordination
 - **Assessment Logic**: Rubric-based with aggregation rules
 
