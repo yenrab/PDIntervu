@@ -1,6 +1,6 @@
 # PDIntervu
 
-PDIntervu is an intelligent technical interview assessment system that conducts structured competency evaluations using a multi-actor, multi-mode architecture. The system evaluates candidates across various technical topics using rubric-based assessments.
+PDIntervu is an intelligent technical interview assessment system that conducts structured competency evaluations using a multi-actor, multi-mode architecture. The system evaluates candidates across Elixir language topics, functional programming patterns, and data structures using rubric-based assessments.
 
 ## Architecture
 
