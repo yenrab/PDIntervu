@@ -72,7 +72,7 @@ The system is designed to be executed as an AALang prompt. When loaded, the PDIn
 ## Technical Details
 
 - **Format**: JSON-LD (JSON for Linking Data)
-- **Vocabulary**: Uses AALang.dev specification (`https://aalang.dev/spec/`)
+- **Vocabulary**: Uses AALang.org specification (`https://aalang.org/spec/`)
 - **State Management**: Shared state across modes for coordination
 - **Assessment Logic**: Rubric-based with aggregation rules
 
