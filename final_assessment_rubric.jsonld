@@ -1,0 +1,162 @@
+{
+  "@context": {
+    "@vocab": "https://actly.dev/spec/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "ex": "https://actly.dev/example/"
+  },
+  "schema:license": "LICENSE",
+  "schema:copyrightHolder": {
+    "@type": "schema:Organization",
+    "schema:name": "The PDIntervu Contributors"
+  },
+  "schema:copyrightYear": "2025",
+  "@graph": [
+    {
+      "@id": "ex:FinalAssessmentRubric",
+      "@type": "Rubric",
+      "rdfs:label": "Final Assessment Rubric",
+      "description": "This rubric aggregates individual topic assessments (data structures, patterns, etc.) into a final overall competency rating.",
+      "scope": "aggregation of multiple topic-specific assessments into a final overall assessment",
+      "aggregationRules": {
+        "@id": "ex:AggregationRules",
+        "rule1": {
+          "condition": "If any topic assessment is 'Not Yet Ready'",
+          "result": "Overall assessment is 'Not Yet Ready'",
+          "description": "Any single topic rated as 'Not Yet Ready' results in an overall 'Not Yet Ready' rating, regardless of other topic ratings.",
+          "priority": 1,
+          "example": {
+            "topicAssessments": [
+              "Data Structures: Exceptional",
+              "Patterns: Not Yet Ready",
+              "Other Topic: Competent"
+            ],
+            "overallAssessment": "Not Yet Ready"
+          }
+        },
+        "rule2": {
+          "condition": "If all topic assessments are 'Competent'",
+          "result": "Overall assessment is 'Competent'",
+          "description": "When all topics are rated as 'Competent', the overall assessment is 'Competent'.",
+          "priority": 2,
+          "example": {
+            "topicAssessments": [
+              "Data Structures: Competent",
+              "Patterns: Competent",
+              "Other Topic: Competent"
+            ],
+            "overallAssessment": "Competent"
+          }
+        },
+        "rule3": {
+          "condition": "If there is exactly one 'Competent' assessment and all others are 'Exceptional' (with no 'Not Yet Ready')",
+          "result": "Overall assessment is 'Exceptional'",
+          "description": "When exactly one topic is rated as 'Competent' and all other topics are rated as 'Exceptional' (with no 'Not Yet Ready'), the overall assessment is 'Exceptional'.",
+          "priority": 3,
+          "example": {
+            "topicAssessments": [
+              "Data Structures: Competent",
+              "Patterns: Exceptional",
+              "Other Topic: Exceptional"
+            ],
+            "overallAssessment": "Exceptional"
+          }
+        },
+        "rule4": {
+          "condition": "If all topic assessments are 'Exceptional'",
+          "result": "Overall assessment is 'Exceptional'",
+          "description": "When all topics are rated as 'Exceptional', the overall assessment is 'Exceptional'.",
+          "priority": 4,
+          "example": {
+            "topicAssessments": [
+              "Data Structures: Exceptional",
+              "Patterns: Exceptional",
+              "Other Topic: Exceptional"
+            ],
+            "overallAssessment": "Exceptional"
+          }
+        }
+      },
+      "aggregationAlgorithm": {
+        "description": "The aggregation algorithm applies rules in priority order:",
+        "steps": [
+          {
+            "step": 1,
+            "action": "Check if any topic assessment is 'Not Yet Ready'",
+            "ifTrue": "Return overall assessment as 'Not Yet Ready' and stop",
+            "ifFalse": "Continue to step 2"
+          },
+          {
+            "step": 2,
+            "action": "Check if all topic assessments are 'Competent'",
+            "ifTrue": "Return overall assessment as 'Competent' and stop",
+            "ifFalse": "Continue to step 3"
+          },
+          {
+            "step": 3,
+            "action": "Check if exactly one topic is 'Competent' and all others are 'Exceptional' (with no 'Not Yet Ready')",
+            "ifTrue": "Return overall assessment as 'Exceptional' and stop",
+            "ifFalse": "Continue to step 4"
+          },
+          {
+            "step": 4,
+            "action": "If all topic assessments are 'Exceptional'",
+            "result": "Return overall assessment as 'Exceptional'"
+          }
+        ]
+      },
+      "topicRubrics": [
+        {
+          "@id": "ex:DataStructuresRubric",
+          "name": "Data Structures Assessment Rubric",
+          "file": "assessment_rubric.jsonld"
+        },
+        {
+          "@id": "ex:PatternsRubric",
+          "name": "Patterns Assessment Rubric",
+          "file": "patterns_rubric.jsonld"
+        }
+      ],
+      "levels": [
+        {
+          "@id": "ex:Final_NotYetReady",
+          "name": "Not Yet Ready",
+          "description": "Overall assessment is 'Not Yet Ready' when at least one topic assessment is 'Not Yet Ready'. This indicates fundamental gaps that need to be addressed before the student can proceed.",
+          "requirements": [
+            "All topics must be assessed",
+            "At least one topic must be rated as 'Not Yet Ready'"
+          ]
+        },
+        {
+          "@id": "ex:Final_Competent",
+          "name": "Competent",
+          "description": "Overall assessment is 'Competent' when all topic assessments are 'Competent'. This indicates solid, consistent performance across all topics without exceptional depth in any area.",
+          "requirements": [
+            "All topics must be assessed",
+            "All topics must be rated as 'Competent'",
+            "No topics may be rated as 'Not Yet Ready'",
+            "No topics may be rated as 'Exceptional'"
+          ]
+        },
+        {
+          "@id": "ex:Final_Exceptional",
+          "name": "Exceptional",
+          "description": "Overall assessment is 'Exceptional' when exactly one topic is 'Competent' and all others are 'Exceptional' (with no 'Not Yet Ready'), or when all topics are 'Exceptional'. This recognizes outstanding performance in most areas, even if one area is only at the competent level.",
+          "requirements": [
+            "All topics must be assessed",
+            "No topics may be rated as 'Not Yet Ready'",
+            "Either: exactly one topic is 'Competent' and all others are 'Exceptional', OR all topics are 'Exceptional'"
+          ]
+        }
+      ],
+      "usageNotes": [
+        "This rubric should be applied after all individual topic assessments are complete",
+        "The aggregation is deterministic: the result depends only on the set of topic assessments",
+        "The priority order ensures that 'Not Yet Ready' takes precedence over all other ratings",
+        "One Competent assessment with all others Exceptional results in Exceptional overall to recognize outstanding work in most areas"
+      ]
+    }
+  ]
+}
+
