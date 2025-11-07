@@ -8,8 +8,8 @@
   },
   "schema:license": "LICENSE",
   "schema:copyrightHolder": {
-    "@type": "schema:Organization",
-    "schema:name": "The PDIntervu Contributors"
+    "@type": "schema:Person",
+    "schema:name": "Lee S. Barney"
   },
   "schema:copyrightYear": "2025",
   "@graph": [

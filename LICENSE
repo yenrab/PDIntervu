@@ -1,46 +1,11 @@
-PDIntervu License
+Copyright (c) 2025 Lee S. Barney
 
-Copyright (c) 2025 The PDIntervu Contributors
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software (the 'Software'), including PDIntervu and its supporting files, to use, copy, modify, merge, publish, and distribute the Software for private, educational, and business purposes, subject to the following conditions:
 
-Permission is hereby granted, free of charge, to any person or entity obtaining a copy
-of this software and associated documentation files (the "Software"), to use, copy,
-modify, merge, publish, distribute, sublicense, and/or use the Software for any
-commercial or educational purpose, subject to the following conditions:
+1. The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-1. The above copyright notice and this permission notice shall be included in all
-   copies or substantial portions of the Software.
+2. RESTRICTION ON SALE: The Software, including but not limited to this file, any modified versions of this file, any portions of this file, any derivative works based on this file, and any other files comprising PDIntervu or its supporting files, may NOT be sold, licensed for a fee, or otherwise commercialized. This restriction applies to the Software in its original form, in any modified form, in any derivative form, and to any portion or component thereof.
 
-2. COMMERCIAL AND EDUCATIONAL USE: The Software may be used for any commercial or
-   educational purpose, including but not limited to:
-   - Internal use within organizations
-   - Integration into commercial products or services
-   - Educational instruction and training
-   - Research and development
+3. PRODUCTS BUILT WITH SOFTWARE: Products built using the Software may be used, distributed, and sold freely for any purpose (public, private, free, or commercial) without restriction.
 
-3. NO SALE RESTRICTION: The Software itself, or any derivative works, variants, or
-   modified versions of the Software, may NOT be sold, licensed for a fee, or
-   distributed as a commercial product. This restriction applies to:
-   - The Software in its original form
-   - Any modified versions or derivative works
-   - Any tools, applications, or services that are primarily based on or
-     substantially incorporate the Software
-
-4. The Software is provided "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   SOFTWARE.
-
-This license allows you to:
-- Use the Software commercially (e.g., in your business operations)
-- Use the Software for educational purposes
-- Modify and create derivative works
-- Distribute the Software (as long as it's not sold)
-
-This license prohibits:
-- Selling the Software or any derivative works
-- Charging a fee specifically for the Software or variants
-- Distributing the Software as a commercial product
-
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
