@@ -17,146 +17,154 @@
       "@id": "ex:CompetencyTopics",
       "@type": "CompetencyList",
       "rdfs:label": "PDIntervu Competency Topics",
-      "topics": [
-        {
-          "@id": "ex:LanguageVariablesTuplesListsBIFs",
-          "name": "Variables, Tuples, Lists, and List BIFs",
-          "area": "Language",
-          "fullName": "Language: Variables, Tuples, Lists, and List BIFs"
-        },
-        {
-          "@id": "ex:LanguageFunctions",
-          "name": "Functions",
-          "area": "Language",
-          "fullName": "Language: Functions"
-        },
-        {
-          "@id": "ex:LanguageStatelessProcesses",
-          "name": "Stateless Processes",
-          "area": "Language",
-          "fullName": "Language: Stateless Processes"
-        },
-        {
-          "@id": "ex:LanguageStatefulProcesses",
-          "name": "Stateful Processes",
-          "area": "Language",
-          "fullName": "Language: Stateful Processes"
-        },
-        {
-          "@id": "ex:OTPGenServer",
-          "name": "gen_server",
-          "area": "OTP",
-          "fullName": "OTP: gen_server"
-        },
-        {
-          "@id": "ex:OTPGenStatem",
-          "name": "gen_statem",
-          "area": "OTP",
-          "fullName": "OTP: gen_statem"
-        },
-        {
-          "@id": "ex:OTPSupervisors",
-          "name": "Supervisors",
-          "area": "OTP",
-          "fullName": "OTP: Supervisors"
-        },
-        {
-          "@id": "ex:PatternsFactory",
-          "name": "Factory Pattern",
-          "area": "Patterns",
-          "fullName": "Patterns: Factory Pattern"
-        },
-        {
-          "@id": "ex:PatternsState",
-          "name": "State Pattern",
-          "area": "Patterns",
-          "fullName": "Patterns: State Pattern"
-        },
-        {
-          "@id": "ex:PatternsLazyComputation",
-          "name": "Lazy Computation Pattern",
-          "area": "Patterns",
-          "fullName": "Patterns: Lazy Computation Pattern"
-        },
-        {
-          "@id": "ex:PatternsFunctors",
-          "name": "Functors",
-          "area": "Patterns",
-          "fullName": "Patterns: Functors"
-        },
-        {
-          "@id": "ex:PatternsMonoids",
-          "name": "Monoids",
-          "area": "Patterns",
-          "fullName": "Patterns: Monoids"
-        },
-        {
-          "@id": "ex:PatternsMonads",
-          "name": "Monads",
-          "area": "Patterns",
-          "fullName": "Patterns: Monads"
-        },
-        {
-          "@id": "ex:PatternsMemoization",
-          "name": "Memoization",
-          "area": "Patterns",
-          "fullName": "Patterns: Memoization"
-        },
-        {
-          "@id": "ex:PatternsChaining",
-          "name": "Chaining",
-          "area": "Patterns",
-          "fullName": "Patterns: Chaining"
-        },
-        {
-          "@id": "ex:PatternsBeautifulCode",
-          "name": "Beautiful Code",
-          "area": "Patterns",
-          "fullName": "Patterns: Beautiful Code"
-        },
-        {
-          "@id": "ex:DataStructQueues",
-          "name": "Queues",
-          "area": "Data Struct",
-          "fullName": "Data Struct: Queues"
-        },
-        {
-          "@id": "ex:DataStructDeques",
-          "name": "Deques",
-          "area": "Data Struct",
-          "fullName": "Data Struct: Deques"
-        },
-        {
-          "@id": "ex:DataStructBinarySearchTrees",
-          "name": "Binary Search Trees",
-          "area": "Data Struct",
-          "fullName": "Data Struct: Binary Search Trees"
-        },
-        {
-          "@id": "ex:DataStructRedBlackTrees",
-          "name": "Red-Black Trees",
-          "area": "Data Struct",
-          "fullName": "Data Struct: Red-Black Trees"
-        },
-        {
-          "@id": "ex:DataStructLeftistMinHeaps",
-          "name": "Leftist Min-Heaps",
-          "area": "Data Struct",
-          "fullName": "Data Struct: Leftist Min-Heaps"
-        },
-        {
-          "@id": "ex:DataStructRandomAccessLists",
-          "name": "Random Access Lists",
-          "area": "Data Struct",
-          "fullName": "Data Struct: Random Access Lists"
-        },
-        {
-          "@id": "ex:DataStructTries",
-          "name": "Tries",
-          "area": "Data Struct",
-          "fullName": "Data Struct: Tries"
-        }
-      ]
+      "topics": {
+        "Language": [
+          {
+            "@id": "ex:LanguageVariablesTuplesListsBIFs",
+            "name": "Variables, Tuples, Lists, and List BIFs",
+            "area": "Language",
+            "fullName": "Language: Variables, Tuples, Lists, and List BIFs"
+          },
+          {
+            "@id": "ex:LanguageFunctions",
+            "name": "Functions",
+            "area": "Language",
+            "fullName": "Language: Functions"
+          },
+          {
+            "@id": "ex:LanguageStatelessProcesses",
+            "name": "Stateless Processes",
+            "area": "Language",
+            "fullName": "Language: Stateless Processes"
+          },
+          {
+            "@id": "ex:LanguageStatefulProcesses",
+            "name": "Stateful Processes",
+            "area": "Language",
+            "fullName": "Language: Stateful Processes"
+          }
+        ],
+        "OTP": [
+          {
+            "@id": "ex:OTPGenServer",
+            "name": "gen_server",
+            "area": "OTP",
+            "fullName": "OTP: gen_server"
+          },
+          {
+            "@id": "ex:OTPGenStatem",
+            "name": "gen_statem",
+            "area": "OTP",
+            "fullName": "OTP: gen_statem"
+          },
+          {
+            "@id": "ex:OTPSupervisors",
+            "name": "supervisors",
+            "area": "OTP",
+            "fullName": "OTP: supervisors"
+          }
+        ],
+        "Patterns": [
+          {
+            "@id": "ex:Factory",
+            "name": "Factory Pattern",
+            "area": "Patterns",
+            "fullName": "Patterns: Factory Pattern"
+          },
+          {
+            "@id": "ex:State",
+            "name": "State Pattern",
+            "area": "Patterns",
+            "fullName": "Patterns: State Pattern"
+          },
+          {
+            "@id": "ex:LazyComputation",
+            "name": "Lazy Computation Pattern",
+            "area": "Patterns",
+            "fullName": "Patterns: Lazy Computation Pattern"
+          },
+          {
+            "@id": "ex:Functor",
+            "name": "Functors",
+            "area": "Patterns",
+            "fullName": "Patterns: Functors"
+          },
+          {
+            "@id": "ex:Monoid",
+            "name": "Monoids",
+            "area": "Patterns",
+            "fullName": "Patterns: Monoids"
+          },
+          {
+            "@id": "ex:Monad",
+            "name": "Monads",
+            "area": "Patterns",
+            "fullName": "Patterns: Monads"
+          },
+          {
+            "@id": "ex:Memoization",
+            "name": "Memoization",
+            "area": "Patterns",
+            "fullName": "Patterns: Memoization"
+          },
+          {
+            "@id": "ex:Chaining",
+            "name": "Chaining",
+            "area": "Patterns",
+            "fullName": "Patterns: Chaining"
+          },
+          {
+            "@id": "ex:BeautifulCode",
+            "name": "Beautiful Code",
+            "area": "Patterns",
+            "fullName": "Patterns: Beautiful Code"
+          }
+        ],
+        "Data Struct": [
+          {
+            "@id": "ex:Queue",
+            "name": "Queues",
+            "area": "Data Struct",
+            "fullName": "Data Struct: Queues"
+          },
+          {
+            "@id": "ex:Deques",
+            "name": "Deques",
+            "area": "Data Struct",
+            "fullName": "Data Struct: Deques"
+          },
+          {
+            "@id": "ex:BinaryTrees",
+            "name": "Binary Search Trees",
+            "area": "Data Struct",
+            "fullName": "Data Struct: Binary Search Trees"
+          },
+          {
+            "@id": "ex:RedBlackTrees",
+            "name": "Red-Black Trees",
+            "area": "Data Struct",
+            "fullName": "Data Struct: Red-Black Trees"
+          },
+          {
+            "@id": "ex:LeftistMinHeaps",
+            "name": "Leftist Min-Heaps",
+            "area": "Data Struct",
+            "fullName": "Data Struct: Leftist Min-Heaps"
+          },
+          {
+            "@id": "ex:RandomAccessLists",
+            "name": "Random Access Lists",
+            "area": "Data Struct",
+            "fullName": "Data Struct: Random Access Lists"
+          },
+          {
+            "@id": "ex:Tries",
+            "name": "Tries",
+            "area": "Data Struct",
+            "fullName": "Data Struct: Tries"
+          }
+        ]
+      }
     }
   ]
 }

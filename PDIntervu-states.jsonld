@@ -1,0 +1,117 @@
+{
+  "@context": {
+    "@vocab": "https://aalang.org/spec/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "ex": "https://aalang.dev/example/"
+  },
+  "schema:license": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software (the 'Software'), including PDIntervu and its supporting files, to use, copy, modify, merge, publish, and distribute the Software for private, educational, and business purposes, subject to the following conditions:\n\n1. The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\n2. RESTRICTION ON SALE: The Software, including but not limited to this file, any modified versions of this file, any portions of this file, any derivative works based on this file, and any other files comprising PDIntervu or its supporting files, may NOT be sold, licensed for a fee, or otherwise commercialized. This restriction applies to the Software in its original form, in any modified form, in any derivative form, and to any portion or component thereof.\n\n3. PRODUCTS BUILT WITH SOFTWARE: Products built using the Software may be used, distributed, and sold freely for any purpose (public, private, free, or commercial) without restriction.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+  "schema:copyrightHolder": {
+    "@type": "schema:Person",
+    "schema:name": "Lee S. Barney"
+  },
+  "schema:copyrightYear": "2025",
+  "@graph": [
+    {
+      "@id": "ex:StateSubGraphReference",
+      "@type": "Reference",
+      "purpose": "Reference to other sub-graph files required for state definitions",
+      "references": [
+        {
+          "file": "PDIntervu.jsonld",
+          "contains": "Mode definitions referenced in 'mode' fields",
+          "required": true
+        },
+        {
+          "file": "PDIntervu-personas.jsonld",
+          "contains": "Persona definitions referenced in 'readableBy' and 'unreadableBy' fields",
+          "required": true
+        }
+      ],
+      "note": "This file defines isolated state structures for each mode. States reference modes and personas defined in other sub-graph files."
+    },
+    {
+      "@id": "ex:CognitiveUnderstandingModeState",
+      "@type": "IsolatedState",
+      "mode": "ex:CognitiveUnderstandingMode",
+      "scope": "private to Cognitive Understanding Mode actors",
+      "includes": [
+        "CognitiveActor1 state:",
+        "  - currentCompetency (topic being assessed)",
+        "  - businessDomain (object containing companyName and domain, generated when competency is selected)",
+        "  - cognitiveAssessmentBucket (assessment bucket: Not Ready Yet, Competent, or Exceptional)",
+        "  - questionsAsked (list of questions asked by this actor)",
+        "  - userResponses (user responses to questions)",
+        "  - assessmentNotes (assessment notes from this actor)",
+        "  - timeTracking (time tracking entries for questions)",
+        "  - assessmentInvalidated (boolean flag)",
+        "CognitiveActor2 state:",
+        "  - currentCompetency (topic being assessed)",
+        "  - businessDomain (object containing companyName and domain, received from CognitivePersona1 or generated)",
+        "  - cognitiveAssessmentBucket (assessment bucket: Not Ready Yet, Competent, or Exceptional)",
+        "  - questionsAsked (list of questions asked by this actor)",
+        "  - userResponses (user responses to questions)",
+        "  - assessmentNotes (assessment notes from this actor)",
+        "  - timeTracking (time tracking entries for questions)",
+        "  - assessmentInvalidated (boolean flag)",
+        "AssessmentAggregatorActor state (operates in this mode):",
+        "  - cognitiveAssessmentBuckets (map of topic -> bucket from Cognitive actors)",
+        "  - codeAssessmentBuckets (map of topic -> bucket from Code actors)",
+        "  - overallAssessments (map of topic -> overall assessment)",
+        "  - hireDecisions (map of topic -> hire/no hire)",
+        "  - invalidatedTopics (set of topics that have been invalidated)"
+      ],
+      "readableBy": ["ex:CognitivePersona1", "ex:CognitivePersona2", "ex:AssessmentAggregatorPersona"],
+      "unreadableBy": ["ex:CodeProblemMode", "ex:CoachingMode"]
+    },
+    {
+      "@id": "ex:CodeProblemModeState",
+      "@type": "IsolatedState",
+      "mode": "ex:CodeProblemMode",
+      "scope": "private to Code Problem Mode actors",
+      "includes": [
+        "CodeActor1 state:",
+        "  - currentCompetency (topic being assessed)",
+        "  - codeAssessmentBucket (assessment bucket: Not Ready Yet, Competent, or Exceptional)",
+        "  - codeProblemsPresented (problems presented to user)",
+        "  - userCodeSubmissions (user's code submissions)",
+        "  - assessmentNotes (assessment notes from this actor)",
+        "  - timeTracking (time tracking entries for questions)",
+        "  - assessmentInvalidated (boolean flag)",
+        "CodeActor2 state:",
+        "  - currentCompetency (topic being assessed)",
+        "  - codeAssessmentBucket (assessment bucket: Not Ready Yet, Competent, or Exceptional)",
+        "  - codeProblemsPresented (problems presented to user)",
+        "  - userCodeSubmissions (user's code submissions)",
+        "  - assessmentNotes (assessment notes from this actor)",
+        "  - timeTracking (time tracking entries for questions)",
+        "  - assessmentInvalidated (boolean flag)"
+      ],
+      "readableBy": ["ex:CodePersona1", "ex:CodePersona2"],
+      "unreadableBy": ["ex:CognitiveUnderstandingMode", "ex:CoachingMode"]
+    },
+    {
+      "@id": "ex:CoachingModeState",
+      "@type": "IsolatedState",
+      "mode": "ex:CoachingMode",
+      "scope": "private to Coaching Mode actors",
+      "includes": [
+        "CoachingActor1 state:",
+        "  - currentCompetency (topic being assessed)",
+        "  - assessmentHistoryReviewed (assessment history reviewed)",
+        "  - feedbackNotes (coaching feedback notes)",
+        "  - growthAreasIdentified (growth areas identified)",
+        "  - assessmentInvalidated (boolean flag)",
+        "CoachingActor2 state:",
+        "  - currentCompetency (topic being assessed)",
+        "  - assessmentHistoryReviewed (assessment history reviewed)",
+        "  - feedbackNotes (coaching feedback notes)",
+        "  - growthAreasIdentified (growth areas identified)",
+        "  - assessmentInvalidated (boolean flag)"
+      ],
+      "readableBy": ["ex:CoachingPersona1", "ex:CoachingPersona2"],
+      "unreadableBy": ["ex:CognitiveUnderstandingMode", "ex:CodeProblemMode"]
+    }
+  ]
+}
